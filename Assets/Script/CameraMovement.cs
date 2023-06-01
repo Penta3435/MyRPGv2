@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] Vector3 offset;
-    [SerializeField] Transform TargetToFollow;
-    void LateUpdate()
+    public Transform TargetToFollow;
+    void Update()
     {
         transform.position = TargetToFollow.position + offset;
         transform.LookAt(TargetToFollow);
