@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class WeaponController : MonoBehaviour
 {
+    [SerializeField] protected PlayerInput playerInput;
     [SerializeField] protected Animator animator;
     [SerializeField] protected Transform hand;
 
@@ -78,5 +79,13 @@ public class WeaponController : MonoBehaviour
     void PlayAtackAnimation()
     {
         animator.SetTrigger("Atack");
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("WeaponDrop") && playerInput.actions.FindActionMap("PlayerRunning").FindAction("EquipWeapon").WasPerformedThisFrame())
+        {
+            print("WEQUIP");
+            EquipWeapon(other.GetComponent<WeaponDrop>().Weapon);
+        }
     }
 }

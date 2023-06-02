@@ -25,8 +25,6 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("RunningX", localDirection.x);
         animator.SetFloat("RunningZ", localDirection.z);
 
-        print(movementDirection);
-
         cc.Move(movementDirection * speed*Time.deltaTime);
     }
 }
