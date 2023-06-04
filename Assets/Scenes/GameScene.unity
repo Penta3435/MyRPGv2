@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39247,8 +39247,8 @@ GameObject:
   - component: {fileID: 8571378720350562218}
   - component: {fileID: 8571378720350562221}
   - component: {fileID: 8571378720350562222}
-  - component: {fileID: 8571378720350562223}
   - component: {fileID: 8571378720350562224}
+  - component: {fileID: 8571378720350562225}
   m_Layer: 0
   m_Name: MainShooter
   m_TagString: Untagged
@@ -39348,8 +39348,8 @@ MonoBehaviour:
     m_ActionName: PlayerRunning/Ability2[/Keyboard/2]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8571378720350562223}
-        m_TargetAssemblyTypeName: CharacterAtack, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WeaponController, Assembly-CSharp
         m_MethodName: Atack
         m_Mode: 0
         m_Arguments:
@@ -39364,8 +39364,8 @@ MonoBehaviour:
     m_ActionName: PlayerRunning/Atack[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8571378720350562223}
-        m_TargetAssemblyTypeName: WeaponController, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShooterWeaponController, Assembly-CSharp
         m_MethodName: SwitchWeapon
         m_Mode: 1
         m_Arguments:
@@ -39380,7 +39380,7 @@ MonoBehaviour:
     m_ActionName: PlayerRunning/SwitchWeapon[/Keyboard/q,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8571378720350562223}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WeaponController, Assembly-CSharp
         m_MethodName: SwitchToMelee
         m_Mode: 1
@@ -39449,23 +39449,6 @@ MonoBehaviour:
   playerInput: {fileID: 8571378720350562219}
   camera: {fileID: 8571378720350562221}
   hand: {fileID: 1799289073}
---- !u!114 &8571378720350562223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8571378720350272073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90c82097b105de64d9d48431e533df21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 8571378720350562219}
-  animator: {fileID: 1772883027}
-  hand: {fileID: 1799289073}
-  weapon1: {fileID: 0}
-  meleeWeapon: {fileID: 0}
 --- !u!54 &8571378720350562224
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39482,6 +39465,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8571378720350562225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571378720350272073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c82097b105de64d9d48431e533df21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
+  animator: {fileID: 0}
+  hand: {fileID: 0}
+  canEquipWeaponType: 
+  weapons: []
+  meleeWeapon: {fileID: 0}
 --- !u!4 &8571378720350562243
 Transform:
   m_ObjectHideFlags: 0
